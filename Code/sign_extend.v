@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module sign_extend(
     input [5:0] InstrCode,
-	 input sign_ex,
+    input sign_ex,
     output reg [7:0] Imm
     );
 
