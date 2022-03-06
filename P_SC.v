@@ -32,7 +32,7 @@ IF I(
 	.PC_sel(PC_sel),
 	.Target(ALUOut),
 	.NPC(NPC),
-   .Instr(InstrCode));
+	.Instr(InstrCode));
 
 ControlUnit CU(
 	.opcode(InstrCode[7:6]),
@@ -46,13 +46,13 @@ ControlUnit CU(
 RegFile R(
 	.clk(clk),
 	.reset(reset),
-   .ReadAddr1(InstrCode[5:3]),
-   .ReadAddr2(InstrCode[2:0]),
-   .WriteAddr(InstrCode[5:3]),
-   .WriteData(ALUOut),
-   .RegWrite(RegWrite),
-   .Data1(Dst),
-   .Data2(Src));
+	.ReadAddr1(InstrCode[5:3]),
+	.ReadAddr2(InstrCode[2:0]),
+	.WriteAddr(InstrCode[5:3]),
+	.WriteData(ALUOut),
+	.RegWrite(RegWrite),
+	.Data1(Dst),
+	.Data2(Src));
 
 sign_extend SE(
 	.InstrCode(InstrCode[5:0]),
@@ -60,10 +60,10 @@ sign_extend SE(
 	.Imm(Imm));
 
 mux mA(Dst,NPC,muxA,A); //Choose Dst if opcode is 00 or 01
-								//Else choose NPC for jump instr
+			//Else choose NPC for jump instr
 								
 mux mB(Src,Imm,muxB,B); //Choose Src is opcode is 00
-								//Else choose imm value for opcode 01 or 11
+			//Else choose imm value for opcode 01 or 11
 
 ALU PQ(
 	.A(A),

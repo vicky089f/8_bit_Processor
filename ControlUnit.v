@@ -21,7 +21,7 @@
 module ControlUnit(
     input [1:0] opcode,
     output PC_sel,
-	 output sign_ex,
+    output sign_ex,
     output muxA,
     output muxB,
     output RegWrite,

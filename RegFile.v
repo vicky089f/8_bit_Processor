@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module RegFile(
     input clk,
-	 input reset,
+    input reset,
     input [2:0] ReadAddr1,
     input [2:0] ReadAddr2,
     input [2:0] WriteAddr,
