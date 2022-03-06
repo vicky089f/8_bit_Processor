@@ -20,10 +20,10 @@
 //////////////////////////////////////////////////////////////////////////////////
 module IF(
     input clk,
-	 input reset,
-	 input PC_sel,
-	 input [7:0] Target,
-	 output [7:0] NPC,
+    input reset,
+    input PC_sel,
+    input [7:0] Target,
+    output [7:0] NPC,
     output [7:0] Instr
     );
 
